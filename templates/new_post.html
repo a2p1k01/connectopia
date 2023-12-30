@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Connectopia - New Post{% endblock %}
+
+{% block content %}
+    <div class="relative text-center bg-white border border-slate-400 rounded-lg">
+        <form method="post">
+            <p class="text-xl font-bold p-2 m-2 text-left">Title:</p>
+            <p class="p-4 m-4">{{ post_form.title }}</p>
+            <p class="text-xl font-bold p-2 m-2 text-left">Body:</p>
+            <p class="p-4 m-4">{{ post_form.body }}</p>
+            {% csrf_token %}
+            <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 border border-green-700 rounded">
+                Create
+            </button>
+        </form>
+    </div>
+{% endblock %}

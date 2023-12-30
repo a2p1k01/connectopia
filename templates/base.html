@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+<header>
+    <div class="bg-green-700 py-8 px-8">
+        <div>
+            <a class="text-white font-bold text-xl" href="/">Connectopia</a>
+            <a class="text-white text-lg" href="/posts">Posts</a>
+            <a class="text-white text-lg" href="/new_post">New Post</a>
+        </div>
+    </div>
+</header>
+<div class="py-4 px-96">
+    {% block content %}
+
+    {% endblock %}
+</div>
+</body>
+</html>

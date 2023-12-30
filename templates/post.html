@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Connectopia - {{ post.title }}{% endblock %}
+
+{% block content %}
+    <div class="text-center">
+        <div class="flex justify-between p-8">
+            <p class="text-3xl font-bold">{{ post.title }}</p>
+            <h1 class="text-lg text-slate-400">{{ post.created }}</h1>
+        </div>
+        <h1 class="text-2xl">{{ post.body }}</h1>
+        <p class="py-8 inset-x-0 bottom-0 h-16 text-slate-500">by {{ post.author }}</p>
+    </div>
+{% endblock %}
