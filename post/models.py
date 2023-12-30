@@ -13,7 +13,7 @@ class PostManager(models.Manager):
 class Post(models.Model):
     title = models.CharField(max_length=50)
     body = models.TextField(max_length=5000)
-    short_body = models.CharField(max_length=100, default='')
+    image = models.ImageField(upload_to='images/', default='', null=True, blank=True)
     slug = models.SlugField(max_length=50, unique_for_date='created')
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     created = models.DateTimeField(auto_now_add=True)
@@ -30,7 +30,6 @@ class Post(models.Model):
 
     def save(self, *args, **kwargs):
         self.slug = self.title.lower().translate(str.maketrans('', '', string.punctuation)).replace(' ', '-')
-        self.short_body = self.body[:100]
         super().save(args, kwargs)
 
     def get_absolute_url(self):

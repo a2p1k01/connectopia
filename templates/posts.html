@@ -7,7 +7,7 @@
         <div class="relative text-center m-6 bg-white border border-slate-400 rounded-xl p-8">
             <a href="{{ post.get_absolute_url }}" class="underline text-green-400 text-3xl p-1">{{ post.title }} by {{ post.author }}</a>
             <h1 class="text-xl p-1">{{ post.created }}</h1>
-            <h1 class="text-lg p-1">{{ post.short_body }}</h1>
+            <h1 class="text-lg p-1">{{ post.body|truncatechars:100 }}</h1>
         </div>
     {% endfor %}
 {% endblock %}
