@@ -15,5 +15,7 @@ urlpatterns = [
     path('profile/', views.profile, name='profile'),
     path('login/', views.login_user, name='login'),
     path('register/', views.register_user, name='register'),
+    path('add_comment/<int:post_id>/', views.add_comment, name='add_comment'),
+
 ]
 

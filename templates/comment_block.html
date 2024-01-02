@@ -1,0 +1,20 @@
+{% if comments|length == 0 %}
+    <div>
+        <h1 class="p-4 text-3xl">Comments not found...</h1>
+    </div>
+{% else %}
+    {% for comment in comments %}
+        <div class="text-left m-8 p-4 border border-slate-400 rounded-lg">
+            {% if user.username == comment.user.username %}
+                <form method="post">
+                    {% csrf_token %}
+                    <button name="delete-comment" value="{{ comment.id }}" class="bg-red-500 absolute py-1 px-2 hover:bg-red-700 text-white font-bold border border-red-700 rounded">
+                        X
+                    </button>
+                </form>
+            {% endif %}
+            <h1 class="text-2xl px-10 text-green-700 py-1">Comment by {{ comment.name }} on {{ comment.created }}</h1>
+            <p class="text-lg">{{ comment.body }}</p>
+        </div>
+    {% endfor %}
+{% endif %}

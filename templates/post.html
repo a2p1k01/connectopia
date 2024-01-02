@@ -8,7 +8,7 @@
             <div class="absolute top-20">
                 <form method="post">
                     {% csrf_token %}
-                    <button class="bg-red-500 mb-4 mt-16 hover:bg-red-700 text-white font-bold py-1 px-2 border border-red-700 rounded">
+                    <button name="delete-post" class="bg-red-500 mb-4 mt-16 hover:bg-red-700 text-white font-bold py-1 px-2 border border-red-700 rounded">
                         X
                     </button>
                 </form>
@@ -31,10 +31,12 @@
                 {% endfor %}
             {% endif %}
         </div>
+        <div>
+            <p class="text-3xl text-left">Comments:
+                <a class="text-green-500" href="{% url 'post:add_comment' post.id %}">Add comment</a>
+            </p>
+        </div>
         <div class="border border-slate-300"></div>
-{#        <div class="text-left m-8 p-4 border border-slate-400 rounded-lg">#}
-{#            <h1 class="text-2xl text-green-700 py-1">Comment by a2p1k02 02 January 2024</h1>#}
-{#            <p class="text-lg">Hello, guys!</p>#}
-{#        </div>#}
+        {% include 'comment_block.html' %}
     </div>
 {% endblock %}

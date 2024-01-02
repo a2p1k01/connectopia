@@ -1,8 +1,8 @@
 from django.contrib.auth import logout, login, authenticate
 from django.shortcuts import render, redirect, get_object_or_404
 
-from post.forms import PostForm, LoginForm, RegistrationForm
-from post.models import Post
+from post.forms import PostForm, LoginForm, RegistrationForm, CommentForm
+from post.models import Post, Comment
 
 
 def index(request):
@@ -51,10 +51,26 @@ def posts_list(request):
 def post_detail(request, year, month, day, slug):
     post = get_object_or_404(Post, slug=slug, created__year=year, created__month=month, created__day=day)
     user = request.user
-    if request.method == 'POST':
+    comments = post.comments.filter()
+    if request.method == 'POST' and 'delete-post' in request.POST:
         post.delete()
         return redirect('/posts')
-    return render(request, 'post.html', {'post': post, "user": user})
+    elif request.method == 'POST' and 'delete-comment' in request.POST:
+        comment = comments.filter(id=request.POST.get('delete-comment', 1))
+        comment.delete()
+    return render(request, 'post.html', {'post': post, "user": user, 'comments': comments})
+
+
+def add_comment(request, post_id):
+    post = get_object_or_404(Post, id=post_id)
+    comment_form = CommentForm(data=request.POST)
+    if request.method == 'POST' and comment_form.is_valid():
+        comment = comment_form.save(commit=False)
+        comment.post = post
+        comment.user = request.user
+        comment.save()
+        return redirect(post)
+    return render(request, 'comment_form.html', {'post': post, 'comment_form': comment_form})
 
 
 def edit_post(request, post_id):

@@ -9,7 +9,7 @@
 - [x] Feature to add image to posts
 - [x] Edit posts
 - [x] Tags
-- [ ] Comments
+- [x] Comments
 - [ ] Set and change avatar
 - [ ] Editable profile page
 - [ ] Messages

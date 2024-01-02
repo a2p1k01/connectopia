@@ -8,6 +8,11 @@ __pycache__/
 
 .idea/
 
+media/images/*.png
+media/images/*.jpg
+media/images/*.bmp
+media/images/*.jpeg
+
 # Distribution / packaging
 .Python
 build/
