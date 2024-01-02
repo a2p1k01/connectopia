@@ -57,14 +57,29 @@ def post_detail(request, year, month, day, slug):
     return render(request, 'post.html', {'post': post, "user": user})
 
 
+def edit_post(request, post_id):
+    post = get_object_or_404(Post, id=post_id)
+    post_form = PostForm(instance=post)
+    if request.method == 'POST':
+        post_form = PostForm(instance=post, data=request.POST, files=request.FILES)
+        if post_form.is_valid():
+            post_form.save(commit=False)
+            post.save()
+            post_form.save_m2m()
+            return redirect('/posts')
+    return render(request, 'edit_post.html',
+                  {'post_form': post_form, 'post': post}
+                  )
+
+
 def new_post(request):
     post = None
     post_form = PostForm(data=request.POST, files=request.FILES)
-    print(request.FILES)
     if post_form.is_valid() and request.method == 'POST':
         post = post_form.save(commit=False)
         post.author = request.user
         post.save()
+        post_form.save_m2m()
         return redirect('/posts')
     return render(request, 'new_post.html',
                   {'post_form': post_form, 'post': post}

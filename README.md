@@ -1,4 +1,4 @@
-# connectopia
+# Connectopia
 
 ### This is a simple social network for my portfolio. 
 
@@ -7,11 +7,11 @@
 - [x] Add and Delete posts
 - [x] Login and Registration
 - [x] Feature to add image to posts
-- [ ] Edit posts
-- [ ] Messages
-- [ ] Tags
+- [x] Edit posts
+- [x] Tags
 - [ ] Comments
 - [ ] Set and change avatar
 - [ ] Editable profile page
+- [ ] Messages
 - [ ] Redesign frontend(maybe, idk yet)
 

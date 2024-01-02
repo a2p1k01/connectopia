@@ -3,6 +3,7 @@ import string
 from django.contrib.auth.models import User
 from django.db import models
 from django.urls import reverse
+from taggit.managers import TaggableManager
 
 
 class PostManager(models.Manager):
@@ -17,6 +18,7 @@ class Post(models.Model):
     slug = models.SlugField(max_length=50, unique_for_date='created')
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     created = models.DateTimeField(auto_now_add=True)
+    tags = TaggableManager()
     post_manager = PostManager()
 
     class Meta:

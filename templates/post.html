@@ -4,24 +4,37 @@
 
 {% block content %}
     <div class="text-center">
-        <div class="absolute top-20">
-            {% if post.author.username == user.username %}
+        {% if post.author.username == user.username %}
+            <div class="absolute top-20">
                 <form method="post">
                     {% csrf_token %}
                     <button class="bg-red-500 mb-4 mt-16 hover:bg-red-700 text-white font-bold py-1 px-2 border border-red-700 rounded">
                         X
                     </button>
                 </form>
-            {% endif %}
-        </div>
+                <a class="underline text-lg text-green-500" href="{% url 'post:edit_post' post.id %}">Edit</a>
+            </div>
+        {% endif %}
         <div class="flex justify-between p-8">
-            <p class="text-3xl font-bold">{{ post.title }}</p>
-            <h1 class="text-lg text-slate-400">{{ post.created }}</h1>
+            <p class="text-3xl py-1 font-bold">{{ post.title }} by {{ post.author }}</p>
+            <h1 class="text-lg py-2 text-slate-400">{{ post.created }}</h1>
         </div>
         <h1 class="text-2xl text-justify">{{ post.body }}</h1>
         {% if post.image.url != "" %}
             <img class="mt-8 text-2xl text-center" src="{{ post.image.url }}" alt="{{ post.title }}">
         {% endif %}
-        <p class="py-8 inset-x-0 bottom-0 h-16 text-slate-500">by {{ post.author }}</p>
+        <div class="py-8">
+            {% if post.tags.all|length != 0 %}
+                <p class="inset-x-0 bottom-0 h-16 text-slate-700">tags:
+                {% for tag in post.tags.all %}
+                    <a class="text-white border bg-green-500 border-green-800 p-0.5 rounded">{{ tag.name }}</a>
+                {% endfor %}
+            {% endif %}
+        </div>
+        <div class="border border-slate-300"></div>
+{#        <div class="text-left m-8 p-4 border border-slate-400 rounded-lg">#}
+{#            <h1 class="text-2xl text-green-700 py-1">Comment by a2p1k02 02 January 2024</h1>#}
+{#            <p class="text-lg">Hello, guys!</p>#}
+{#        </div>#}
     </div>
 {% endblock %}
