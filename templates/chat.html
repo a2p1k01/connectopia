@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}Connectopia - Chat Page{% endblock %}
+
+{% block content %}
+    <div class="p-10 border border-blue-400 max-h-fit w-full rounded-xl shadow-xl bg-blue-100">
+        {% csrf_token %}
+        {% for message in messages %}
+            <div class="p-4 mb-4 border border-slate-400 rounded-xl shadow-lg bg-white">
+                <div class="flex gap-4">
+                    <img class="w-16 h-16" src="{{ message.user.profile.avatar.url }}" alt="avatar">
+                    <div>
+                        <a class="text-xl font-bold" href="/profile/{{ message.user.username }}">{{ message.user.username }}</a>
+                        <p class="text-xl">{{ message.message }}</p>
+                    </div>
+                    <p class="absolute right-96 px-16 text-slate-400">{{ message.sent_at }}</p>
+                    {% if user.id == message.user.id %}
+                        <form enctype="multipart/form-data" method="post">
+                            {% csrf_token %}
+                            <button name="delete-message"
+                                    value="{{ message.id }}"
+                                    class="absolute right-96 px-2 mx-16 my-8 bg-red-500 rounded text-white">
+                                X
+                            </button>
+                        </form>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+        <form enctype="multipart/form-data" method="post">
+            <div class="flex gap-2">
+                {{ message_form.message }}
+                {% csrf_token %}
+                <button type="submit"
+                        name="send-message"
+                        class="border text-xl rounded-xl border-slate-500 text-white py-4 px-8 bg-blue-400"
+                >
+                    Send
+                </button>
+            </div>
+        </form>
+
+    </div>
+{% endblock %}

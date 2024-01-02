@@ -12,6 +12,6 @@
 - [x] Comments
 - [x] Set and change avatar
 - [x] Editable profile page
-- [ ] Messages
+- [x] Messages
 - [ ] Redesign frontend(maybe, idk yet)
 

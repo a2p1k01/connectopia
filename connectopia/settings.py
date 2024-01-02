@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'taggit',
     'post.apps.PostConfig',
     'account.apps.AccountConfig',
+    'chat.apps.ChatConfig',
 ]
 
 MIDDLEWARE = [

@@ -7,7 +7,7 @@
 </head>
 <body>
 <header>
-    <div class="grid grid-cols-2 bg-green-700 py-8 px-8">
+    <div class="grid grid-cols-2 shadow-lg bg-green-700 py-8 px-8">
         <div class="text-left">
             <a class="p-2 text-white font-bold text-xl" href="/">Connectopia</a>
             <a class="p-2 text-white text-lg" href="/posts">Posts</a>
@@ -16,11 +16,12 @@
         </div>
         <div class="text-right">
             <a class="p-2 text-white text-center text-lg" href="/profile">Profile</a>
+            <a class="p-2 text-white text-center text-lg" href="/chat">Chat</a>
             <a class="p-2 text-white text-center text-lg" href="/logout">Logout</a>
         </div>
     </div>
 </header>
-<div class="py-4 px-96">
+<div class="py-8 px-96">
     {% block content %}
 
     {% endblock %}
