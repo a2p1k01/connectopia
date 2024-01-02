@@ -15,7 +15,7 @@ def profile(request):
     user = request.user
     if user.is_authenticated:
         return render(request, 'profile.html',
-                      {"user": user, "is_own": True}
+                      {"user": user,  "is_admin": request.user.is_superuser, "is_own": True}
                       )
     return redirect('/login')
 

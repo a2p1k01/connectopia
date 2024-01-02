@@ -16,15 +16,22 @@
                 <p class="text-lg">Register Date: {{ user.date_joined }}</p>
             </div>
         </div>
-        {% if is_own %}
-        <div class="absolute top-28 right-96 mx-2">
-            <a href="/edit_profile">
-                <button class="p-2 my-2 w-16 text-white bg-green-500 font-bold border border-green-700 rounded">
-                    Edit
-                </button>
-            </a>
+        <div class="absolute p-2 top-10 right-96 mx-2">
+            {% if is_own %}
+                <a href="/edit_profile">
+                    <button class="p-2 my-4 w-16 text-white bg-green-500 font-bold border border-green-700 rounded">
+                        Edit
+                    </button>
+                </a>
+            {% endif %}
+            {% if is_admin %}
+                <a href="/admin">
+                    <button class="p-2 my-20 w-16 text-white bg-red-500 font-bold border border-red-700 rounded">
+                        Admin
+                    </button>
+                </a>
+            {% endif %}
         </div>
-        {% endif %}
         {#                <div class="absolute top-52 my-1 mx-16">#}
         {#                    {% if account.is_online %}#}
         {#                        <button disabled class="p-1 bg-green-500 font-bold border border-green-700 rounded-xl"></button>#}
