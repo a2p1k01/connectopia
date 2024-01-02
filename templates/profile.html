@@ -3,15 +3,35 @@
 {% block title %}Connectopia - {{ user.username }}{% endblock %}
 
 {% block content %}
-    <div class="text-left">
-        <p class="text-2xl">Username: {{ user.username }}</p>
-        <p class="text-lg">Register Date: {{ user.date_joined }}</p>
-        <form method="post">
-            {% csrf_token %}
-            <button class="mt-2 bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 border border-yellow-700 rounded">
-                Logout
-            </button>
-        </form>
+    <div class="border shadow-lg rounded-xl border-slate-500 text-left">
+        <div class="p-4 flex items-center gap-4">
+            <img height="128" width="128" src="{{ user.profile.avatar.url }}" alt="avatar">
+            <div>
+                <p class="text-2xl">First name: {{ user.first_name }}</p>
+                <p class="text-2xl">Last name: {{ user.last_name }}</p>
+                <p class="text-2xl">Username: {{ user.username }}</p>
+                {% if user.profile.status != '' %}
+                    <p class="text-2xl">Status: {{ user.profile.status }}</p>
+                {% endif %}
+                <p class="text-lg">Register Date: {{ user.date_joined }}</p>
+            </div>
+        </div>
+        {% if is_own %}
+        <div class="absolute top-28 right-96 mx-2">
+            <a href="/edit_profile">
+                <button class="p-2 my-2 w-16 text-white bg-green-500 font-bold border border-green-700 rounded">
+                    Edit
+                </button>
+            </a>
+        </div>
+        {% endif %}
+        {#                <div class="absolute top-52 my-1 mx-16">#}
+        {#                    {% if account.is_online %}#}
+        {#                        <button disabled class="p-1 bg-green-500 font-bold border border-green-700 rounded-xl"></button>#}
+        {#                    {% else %}#}
+        {#                        <button disabled class="p-1 bg-red-500 font-bold border border-red-700 rounded-xl"></button>#}
+        {#                    {% endif %}#}
+        {#                </div>#}
     </div>
 {% endblock %}
 

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Connectopia - Users Page{% endblock %}
+
+{% block content %}
+    {% for user in users %}
+        <div class="text-center m-6 bg-white border border-slate-400 rounded-xl p-8">
+            <div class="flex items-center gap-3">
+                <img width="64" height="64"
+                     class="rounded-xl text-2xl text-center"
+                     src="{{ user.profile.avatar.url }}"
+                     alt="{{ user.username }}"
+                >
+                <a href="/profile/{{ user.username }}" class="underline text-green-400 text-3xl p-1">{{ user.username }}</a>
+                <p class="pl-96 text-right text-3xl">{{ user.profile.status }}</p>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

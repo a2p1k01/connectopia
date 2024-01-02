@@ -10,8 +10,8 @@
 - [x] Edit posts
 - [x] Tags
 - [x] Comments
-- [ ] Set and change avatar
-- [ ] Editable profile page
+- [x] Set and change avatar
+- [x] Editable profile page
 - [ ] Messages
 - [ ] Redesign frontend(maybe, idk yet)
 

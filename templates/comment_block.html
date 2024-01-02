@@ -13,7 +13,7 @@
                     </button>
                 </form>
             {% endif %}
-            <h1 class="text-2xl px-10 text-green-700 py-1">Comment by {{ comment.name }} on {{ comment.created }}</h1>
+            <h1 class="text-2xl px-10 text-green-700 py-1">Comment by {{ comment.user }} on {{ comment.created }}</h1>
             <p class="text-lg">{{ comment.body }}</p>
         </div>
     {% endfor %}
