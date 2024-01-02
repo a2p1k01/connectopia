@@ -1,4 +1,4 @@
-import string
+import string, secrets
 
 from django.contrib.auth.models import User
 from django.db import models
@@ -31,7 +31,12 @@ class Post(models.Model):
         return self.title
 
     def save(self, *args, **kwargs):
-        self.slug = self.title.lower().translate(str.maketrans('', '', string.punctuation)).replace(' ', '-')
+        self.slug = (
+            self.title.lower()
+            .translate(str.maketrans('', '', string.punctuation))
+            .replace(' ', '-') +
+            ''.join(secrets.choice(string.ascii_letters + string.digits) for _ in range(5))
+        )
         super().save(args, kwargs)
 
     def get_absolute_url(self):
