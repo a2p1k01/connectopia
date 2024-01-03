@@ -5,26 +5,28 @@
     <title>{% block title %}{% endblock %}</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-<header>
-    <div class="grid grid-cols-2 shadow-lg bg-green-700 py-8 px-8">
-        <div class="text-left">
-            <a class="p-2 text-white font-bold text-xl" href="/">Connectopia</a>
-            <a class="p-2 text-white text-lg" href="/posts">Posts</a>
-            <a class="p-2 text-white text-lg" href="/new_post">New Post</a>
-            <a class="p-2 text-white text-lg" href="/users">Users</a>
+<body class="bg-violet-100">
+<div class="shadow-xl rounded-2xl mt-8 w-4/5 min-h-screen m-auto bg-white">
+    <header>
+        <div class="rounded-t-2xl grid grid-cols-2 shadow-lg bg-violet-700 py-8 px-8">
+            <div class="text-left">
+                <a class="p-2 text-white font-bold text-xl" href="/">Connectopia</a>
+                <a class="p-2 text-white text-lg" href="/posts">Posts</a>
+                <a class="p-2 text-white text-lg" href="/new_post">New Post</a>
+                <a class="p-2 text-white text-lg" href="/users">Users</a>
+            </div>
+            <div class="text-right">
+                <a class="p-2 text-white text-center text-lg" href="/profile">Profile</a>
+                <a class="p-2 text-white text-center text-lg" href="/chat">Chat</a>
+                <a class="p-2 text-white text-center text-lg" href="/logout">Logout</a>
+            </div>
         </div>
-        <div class="text-right">
-            <a class="p-2 text-white text-center text-lg" href="/profile">Profile</a>
-            <a class="p-2 text-white text-center text-lg" href="/chat">Chat</a>
-            <a class="p-2 text-white text-center text-lg" href="/logout">Logout</a>
-        </div>
-    </div>
-</header>
-<div class="py-8 px-96">
-    {% block content %}
+    </header>
+    <div class="py-8 px-48">
+        {% block content %}
 
-    {% endblock %}
+        {% endblock %}
+    </div>
 </div>
 </body>
 </html>

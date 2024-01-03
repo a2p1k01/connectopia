@@ -8,12 +8,12 @@
             {% if user.username == comment.user.username %}
                 <form method="post">
                     {% csrf_token %}
-                    <button name="delete-comment" value="{{ comment.id }}" class="bg-red-500 absolute py-1 px-2 hover:bg-red-700 text-white font-bold border border-red-700 rounded">
+                    <button name="delete-comment" value="{{ comment.id }}" class="bg-rose-500 absolute py-1 px-2 hover:bg-rose-700 text-white font-bold border border-red-700 rounded">
                         X
                     </button>
                 </form>
             {% endif %}
-            <h1 class="text-2xl px-10 text-green-700 py-1">Comment by {{ comment.user }} on {{ comment.created }}</h1>
+            <h1 class="text-2xl px-10 text-violet-700 py-1">Comment by {{ comment.user }} on {{ comment.created }}</h1>
             <p class="text-lg">{{ comment.body }}</p>
         </div>
     {% endfor %}

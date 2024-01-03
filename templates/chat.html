@@ -3,7 +3,7 @@
 {% block title %}Connectopia - Chat Page{% endblock %}
 
 {% block content %}
-    <div class="p-10 border border-blue-400 max-h-fit w-full rounded-xl shadow-xl bg-blue-100">
+    <div class="p-10 border border-violet-400 max-h-fit w-full rounded-xl shadow-xl bg-violet-100">
         {% csrf_token %}
         {% for message in messages %}
             <div class="p-4 mb-4 border border-slate-400 rounded-xl shadow-lg bg-white">
@@ -19,7 +19,7 @@
                             {% csrf_token %}
                             <button name="delete-message"
                                     value="{{ message.id }}"
-                                    class="absolute right-96 px-2 mx-16 my-8 bg-red-500 rounded text-white">
+                                    class="absolute right-96 px-2 mx-16 my-8 bg-rose-500 rounded text-white">
                                 X
                             </button>
                         </form>
@@ -33,7 +33,7 @@
                 {% csrf_token %}
                 <button type="submit"
                         name="send-message"
-                        class="border text-xl rounded-xl border-slate-500 text-white py-4 px-8 bg-blue-400"
+                        class="border text-xl rounded-xl border-slate-500 text-white py-4 px-8 bg-violet-400"
                 >
                     Send
                 </button>

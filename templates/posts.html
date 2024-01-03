@@ -8,13 +8,13 @@
             {% if post.image.url != "" %}
                 <img class="shadow-lg mb-8 rounded-xl text-2xl text-center" src="{{ post.image.url }}" alt="{{ post.title }}">
             {% endif %}
-            <a href="{{ post.get_absolute_url }}" class="underline text-green-400 text-3xl p-1">{{ post.title }} by {{ post.author }}</a>
+            <a href="{{ post.get_absolute_url }}" class="underline text-violet-400 text-3xl p-1">{{ post.title }} by {{ post.author }}</a>
             <h1 class="text-xl p-1">{{ post.created }}</h1>
             <h1 class="text-lg p-1">{{ post.body|truncatechars:100 }}</h1>
             {% if post.tags.all|length != 0 %}
                 <p class="text-slate-700">tags:
                 {% for tag in post.tags.all %}
-                    <a class="text-white border bg-green-500 border-green-800 p-0.5 rounded">{{ tag.name }}</a>
+                    <a class="text-white border bg-violet-500 border-violet-800 p-0.5 rounded">{{ tag.name }}</a>
                 {% endfor %}
             {% endif %}
         </div>

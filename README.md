@@ -13,5 +13,6 @@
 - [x] Set and change avatar
 - [x] Editable profile page
 - [x] Messages
-- [ ] Redesign frontend(maybe, idk yet)
+- [x] Redesign frontend(maybe, idk yet)
+- [ ] Something else...
 
