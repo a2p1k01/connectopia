@@ -13,6 +13,8 @@
 - [x] Set and change avatar
 - [x] Editable profile page
 - [x] Messages
+- [x] Search feature
 - [x] Redesign frontend(maybe, idk yet)
+- [x] Translations
 - [ ] Something else...
 

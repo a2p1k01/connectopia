@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 
-{% block title %}Connectopia - Login{% endblock %}
+{% load i18n %}
+
+{% block title %}Connectopia - {% translate 'Register' %}{% endblock %}
 
 {% block content %}
     <div class="text-left">
@@ -8,9 +10,9 @@
             {% csrf_token %}
             {{ form.as_div }}
             <button class="mt-2 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 border border-green-700 rounded">
-                Register
+                {% translate 'Register' %}
             </button>
         </form>
-        <p class="text-center py-8 inset-x-0 bottom-0 h-16">Click here if you have account <a class="underline text-green-400" href="/login">CLICK ME</a></p>
+        <p class="text-center py-8 inset-x-0 bottom-0 h-16">{% translate 'Click here if you have account' %} <a class="underline text-green-400" href="/login">{% translate 'CLICK ME' %}</a></p>
     </div>
 {% endblock %}

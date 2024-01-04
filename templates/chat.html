@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 
-{% block title %}Connectopia - Chat Page{% endblock %}
+{% load i18n %}
+
+{% block title %}Connectopia - {% translate 'Chat Page' %}{% endblock %}
 
 {% block content %}
     <div class="p-10 border border-violet-400 max-h-fit w-full rounded-xl shadow-xl bg-violet-100">
@@ -35,7 +37,7 @@
                         name="send-message"
                         class="border text-xl rounded-xl border-slate-500 text-white py-4 px-8 bg-violet-400"
                 >
-                    Send
+                    {% translate 'Send' %}
                 </button>
             </div>
         </form>

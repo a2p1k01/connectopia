@@ -1,21 +1,23 @@
 {% extends 'base.html' %}
 
-{% block title %}Connectopia - New Post{% endblock %}
+{% load i18n %}
+
+{% block title %}Connectopia - {% translate 'New Post' %}{% endblock %}
 
 {% block content %}
     <div class="relative text-center bg-white border border-slate-400 rounded-lg">
         <form enctype="multipart/form-data" method="post">
-            <p class="text-xl font-bold p-2 m-2 text-left">Title:</p>
+            <p class="text-xl font-bold p-2 m-2 text-left">{% translate 'Title' %}:</p>
             <p class="p-4 m-2">{{ post_form.title }}</p>
-            <p class="text-xl font-bold p-2 m-2 text-left">Body:</p>
+            <p class="text-xl font-bold p-2 m-2 text-left">{% translate 'Body' %}:</p>
             <p class="p-4 m-2">{{ post_form.body }}</p>
-            <p class="text-xl font-bold p-2 m-2 text-left">Tags:</p>
+            <p class="text-xl font-bold p-2 m-2 text-left">{% translate 'Tags' %}:</p>
             <p class="p-4 m-2">{{ post_form.tags }}</p>
-            <p class="text-xl font-bold p-2 m-2 text-left">Image:</p>
+            <p class="text-xl font-bold p-2 m-2 text-left">{% translate 'Image' %}:</p>
             <p class="p-4 m-2">{{ post_form.image }}</p>
             {% csrf_token %}
             <button type="submit" class="bg-blue-500 mb-4 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
-                Create
+                {% translate 'Create' %}
             </button>
         </form>
     </div>

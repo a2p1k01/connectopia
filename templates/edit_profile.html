@@ -1,25 +1,27 @@
 {% extends 'base.html' %}
 
-{% block title %}Connectopia - Edit Profile{% endblock %}
+{% load i18n %}
+
+{% block title %}Connectopia - {% translate 'Edit Profile' %}{% endblock %}
 
 {% block content %}
     <div class="relative text-center bg-white border border-slate-400 rounded-lg">
         <form enctype="multipart/form-data" method="post">
-            <p class="text-xl font-bold p-2 m-2 text-left">Avatar:</p>
+            <p class="text-xl font-bold p-2 m-2 text-left">{% translate 'Avatar' %}:</p>
             <p class="p-4 m-2">{{ profile_form.avatar }}</p>
-            <p class="text-xl font-bold p-2 m-2 text-left">Username:</p>
+            <p class="text-xl font-bold p-2 m-2 text-left">{% translate 'Username' %}:</p>
             <p class="p-4 m-2">{{ user_form.username }}</p>
-            <p class="text-xl font-bold p-2 m-2 text-left">Status:</p>
+            <p class="text-xl font-bold p-2 m-2 text-left">{% translate 'Status' %}:</p>
             <p class="p-4 m-2">{{ profile_form.status }}</p>
-            <p class="text-xl font-bold p-2 m-2 text-left">FistName:</p>
+            <p class="text-xl font-bold p-2 m-2 text-left">{% translate 'FirstName' %}:</p>
             <p class="p-4 m-2">{{ user_form.first_name }}</p>
-            <p class="text-xl font-bold p-2 m-2 text-left">LastName:</p>
+            <p class="text-xl font-bold p-2 m-2 text-left">{% translate 'LastName' %}:</p>
             <p class="p-4 m-2">{{ user_form.last_name }}</p>
-            <p class="text-xl font-bold p-2 m-2 text-left">Email:</p>
+            <p class="text-xl font-bold p-2 m-2 text-left">{% translate 'Email' %}:</p>
             <p class="p-4 m-2">{{ user_form.email }}</p>
             {% csrf_token %}
             <button type="submit" class="bg-yellow-500 mb-4 hover:bg-yellow-700 text-white font-bold py-2 px-4 border border-yellow-700 rounded">
-                Confirm
+                {% translate 'Confirm' %}
             </button>
         </form>
     </div>

@@ -1,6 +1,8 @@
+{% load i18n %}
+
 {% if comments|length == 0 %}
     <div>
-        <h1 class="p-4 text-3xl">Comments not found...</h1>
+        <h1 class="p-4 text-3xl">{% translate 'Comments not found...' %}</h1>
     </div>
 {% else %}
     {% for comment in comments %}
@@ -13,7 +15,7 @@
                     </button>
                 </form>
             {% endif %}
-            <h1 class="text-2xl px-10 text-violet-700 py-1">Comment by {{ comment.user }} on {{ comment.created }}</h1>
+            <h1 class="text-2xl px-10 text-violet-700 py-1">{% translate 'Comment by' %} {{ comment.user }} {% translate 'on' %} {{ comment.created }}</h1>
             <p class="text-lg">{{ comment.body }}</p>
         </div>
     {% endfor %}

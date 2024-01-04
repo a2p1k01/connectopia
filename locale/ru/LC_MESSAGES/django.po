@@ -1,0 +1,193 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-04 22:48+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: .\templates\base.html:16
+msgid "Posts"
+msgstr "Посты"
+
+#: .\templates\base.html:17 .\templates\new_post.html:5
+msgid "New Post"
+msgstr "Новый пост"
+
+#: .\templates\base.html:18
+msgid "Users"
+msgstr "Пользователи"
+
+#: .\templates\base.html:21
+msgid "Profile"
+msgstr "Профиль"
+
+#: .\templates\base.html:22
+msgid "Chat"
+msgstr "Чат"
+
+#: .\templates\base.html:23
+msgid "Logout"
+msgstr "Выход"
+
+#: .\templates\chat.html:5
+#, fuzzy
+#| msgid "Chat"
+msgid "Chat Page"
+msgstr "Чат"
+
+#: .\templates\chat.html:40
+msgid "Send"
+msgstr "Отправить"
+
+#: .\templates\comment_block.html:5
+msgid "Comments not found..."
+msgstr "Комментарии не найдены"
+
+#: .\templates\comment_block.html:18
+msgid "Comment by"
+msgstr "Комментарий"
+
+#: .\templates\comment_block.html:18
+msgid "on"
+msgstr "от"
+
+#: .\templates\edit_post.html:5
+msgid "Edit Post"
+msgstr "Редактировать пост"
+
+#: .\templates\edit_post.html:10 .\templates\new_post.html:10
+msgid "Title"
+msgstr "Название"
+
+#: .\templates\edit_post.html:12 .\templates\new_post.html:12
+msgid "Body"
+msgstr "Тело"
+
+#: .\templates\edit_post.html:14 .\templates\new_post.html:14
+msgid "Tags"
+msgstr "Тэги"
+
+#: .\templates\edit_post.html:16 .\templates\new_post.html:16
+msgid "Image"
+msgstr "Изображение"
+
+#: .\templates\edit_post.html:20 .\templates\edit_profile.html:24
+msgid "Confirm"
+msgstr "Подтвердить"
+
+#: .\templates\edit_profile.html:5
+msgid "Edit Profile"
+msgstr "Редактировать профиль"
+
+#: .\templates\edit_profile.html:10
+msgid "Avatar"
+msgstr "Аватар"
+
+#: .\templates\edit_profile.html:12 .\templates\profile.html:14
+msgid "Username"
+msgstr "Имя пользователя"
+
+#: .\templates\edit_profile.html:14 .\templates\profile.html:16
+msgid "Status"
+msgstr "Статус"
+
+#: .\templates\edit_profile.html:16
+msgid "FirstName"
+msgstr "Имя"
+
+#: .\templates\edit_profile.html:18
+msgid "LastName"
+msgstr "Фамилия"
+
+#: .\templates\edit_profile.html:20
+msgid "Email"
+msgstr "Электронная почта"
+
+#: .\templates\login.html:5 .\templates\login.html:13
+msgid "Login"
+msgstr "Логин"
+
+#: .\templates\login.html:17
+msgid "Click here if you dont have an account"
+msgstr "Нажмите сюда, если у вас нет аккаунта"
+
+#: .\templates\login.html:19 .\templates\register.html:16
+msgid "CLICK ME"
+msgstr "НАЖМИ МЕНЯ"
+
+#: .\templates\new_post.html:20
+msgid "Create"
+msgstr "Создать"
+
+#: .\templates\post.html:17 .\templates\profile.html:25
+msgid "Edit"
+msgstr "Изм."
+
+#: .\templates\post.html:21 .\templates\posts.html:20
+msgid "by"
+msgstr "от"
+
+#: .\templates\post.html:30 .\templates\posts.html:24
+msgid "tags"
+msgstr "тэги"
+
+#: .\templates\post.html:37
+msgid "Comments"
+msgstr "Комментарии"
+
+#: .\templates\posts.html:12
+msgid "Search..."
+msgstr "Поиск..."
+
+#: .\templates\profile.html:12
+#, fuzzy
+#| msgid "First name"
+msgid "First name"
+msgstr "Имя"
+
+#: .\templates\profile.html:13
+#, fuzzy
+#| msgid "Last name"
+msgid "Last name"
+msgstr "Фамилия"
+
+#: .\templates\profile.html:18
+msgid "Register Date"
+msgstr "Дата регистрации"
+
+#: .\templates\profile.html:32
+msgid "Admin"
+msgstr "Админ"
+
+#: .\templates\register.html:5 .\templates\register.html:13
+msgid "Register"
+msgstr "Зарегистрироваться"
+
+#: .\templates\register.html:16
+msgid "Click here if you have account"
+msgstr "Нажмите сюда, если у вас есть аккаунт"
+
+#, fuzzy
+#~| msgid "on"
+#~ msgid "Mon"
+#~ msgstr "от"
+
+#, fuzzy
+#~| msgid "Status"
+#~ msgid "Sat"
+#~ msgstr "Статус"

@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% load i18n %}
+
 {% block title %}Connectopia - {{ user.username }}{% endblock %}
 
 {% block content %}
@@ -7,27 +9,28 @@
         <div class="p-4 flex items-center gap-4">
             <img height="128" width="128" src="{{ user.profile.avatar.url }}" alt="avatar">
             <div>
-                <p class="text-2xl">First name: {{ user.first_name }}</p>
-                <p class="text-2xl">Last name: {{ user.last_name }}</p>
-                <p class="text-2xl">Username: {{ user.username }}</p>
+
+                <p class="text-2xl">{% trans 'First name' %}: {{ user.first_name }}</p>
+                <p class="text-2xl">{% trans 'Last name' %}: {{ user.last_name }}</p>
+                <p class="text-2xl">{% trans 'Username' %}: {{ user.username }}</p>
                 {% if user.profile.status != '' %}
-                    <p class="text-2xl">Status: {{ user.profile.status }}</p>
+                    <p class="text-2xl">{% translate 'Status' %}: {{ user.profile.status }}</p>
                 {% endif %}
-                <p class="text-lg">Register Date: {{ user.date_joined }}</p>
+                <p class="text-lg">{% translate 'Register Date' %}: {{ user.date_joined }}</p>
             </div>
         </div>
         <div class="absolute p-2 top-24 right-96 mx-2">
             {% if is_own %}
                 <a href="/edit_profile">
                     <button class="p-2 my-4 w-16 text-white bg-green-500 font-bold border border-green-700 rounded">
-                        Edit
+                        {% translate 'Edit' %}
                     </button>
                 </a>
             {% endif %}
             {% if is_admin %}
                 <a href="/admin">
                     <button class="p-2 my-20 w-16 text-white bg-red-500 font-bold border border-red-700 rounded">
-                        Admin
+                        {% translate 'Admin' %}
                     </button>
                 </a>
             {% endif %}
