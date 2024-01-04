@@ -3,6 +3,13 @@
 {% block title %}Connectopia - Home Page{% endblock %}
 
 {% block content %}
+    <form method="get">
+        <input class="mx-24 p-2 w-5/6 bg-slate-100 border h-15 rounded-xl border-slate-500"
+               type="text"
+               name="query"
+               placeholder="Search..."
+        >
+    </form>
     {% for post in posts %}
         <div class="relative text-center m-6 bg-white border border-slate-400 rounded-xl p-8">
             {% if post.image.url != "" %}

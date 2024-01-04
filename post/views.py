@@ -1,3 +1,4 @@
+from django.db.models import Q
 from django.shortcuts import render, redirect, get_object_or_404
 
 from post.forms import PostForm, CommentForm
@@ -9,8 +10,13 @@ def index(request):
 
 
 def posts_list(request):
-    posts = Post.post_manager.filter()
-    return render(request, 'posts.html', {"posts": posts})
+    query = ''
+    if 'query' in request.GET:
+        query = request.GET.get('query')
+    posts = Post.post_manager.filter(Q(slug__contains=query))
+    return render(request, 'posts.html', {
+        "posts": posts,
+    })
 
 
 def post_detail(request, year, month, day, slug):
