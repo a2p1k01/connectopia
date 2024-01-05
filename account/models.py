@@ -7,6 +7,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, unique=True)
     avatar = models.ImageField(upload_to='images/', default='images/avatar.png')
     status = models.CharField(max_length=100, default='', blank=True)
+    followers = models.ManyToManyField('self', blank=True, symmetrical=False, default='')
 
     # def is_online(self):
     #     return (timezone.now() - self.user.is_authenticated) < timezone.timedelta(minutes=1)

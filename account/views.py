@@ -8,14 +8,16 @@ from account.models import Profile
 
 def get_users(request):
     users = User.objects.all()
-    return render(request, 'users.html', {'users': users})
+    return render(request, 'users.html', {
+        'users': users,
+    })
 
 
 def profile(request):
     user = request.user
     if user.is_authenticated:
         return render(request, 'profile.html',
-                      {"user": user,  "is_admin": request.user.is_superuser, "is_own": True}
+                      {"user": user}
                       )
     return redirect('/login')
 
@@ -38,9 +40,15 @@ def edit_profile(request):
 
 def profile_detail(request, username):
     user = get_object_or_404(User, username=username)
-    return render(request, 'profile.html',
-                  {"user": user, "is_own": False}
-                  )
+    if request.method == 'POST':
+        if 'follow' in request.POST:
+            user.profile.followers.add(request.user.profile)
+        elif 'unfollow' in request.POST:
+            user.profile.followers.remove(request.user.profile)
+    return render(request, 'profile.html', {
+        "user": user,
+        'following': len(user.profile.followers.filter(user=request.user)) != 0
+    })
 
 
 def register_user(request):
@@ -48,9 +56,9 @@ def register_user(request):
         form = RegistrationForm(request.POST)
         if form.is_valid():
             user = form.save(commit=False)
-            account = Profile(user=user)
+            user_profile = Profile(user=user)
             user.save()
-            account.save()
+            user_profile.save()
             return redirect('/login')
     form = RegistrationForm()
     return render(request, 'register.html', {"form": form})

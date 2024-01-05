@@ -16,5 +16,5 @@
 - [x] Search feature
 - [x] Redesign frontend(maybe, idk yet)
 - [x] Translations
+- [x] Followers
 - [ ] Something else...
-

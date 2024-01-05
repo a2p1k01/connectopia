@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-04 22:48+0300\n"
+"POT-Creation-Date: 2024-01-05 11:07+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,15 +32,19 @@ msgstr "Новый пост"
 msgid "Users"
 msgstr "Пользователи"
 
-#: .\templates\base.html:21
+#: .\templates\base.html:22
+msgid "Admin"
+msgstr "Админ"
+
+#: .\templates\base.html:24
 msgid "Profile"
 msgstr "Профиль"
 
-#: .\templates\base.html:22
+#: .\templates\base.html:25
 msgid "Chat"
 msgstr "Чат"
 
-#: .\templates\base.html:23
+#: .\templates\base.html:26
 msgid "Logout"
 msgstr "Выход"
 
@@ -65,6 +69,22 @@ msgstr "Комментарий"
 #: .\templates\comment_block.html:18
 msgid "on"
 msgstr "от"
+
+#: .\templates\comment_form.html:5
+#, fuzzy
+#| msgid "Comment by"
+msgid "New comment to"
+msgstr "Новый комментарий к"
+
+#: .\templates\comment_form.html:10
+#, fuzzy
+#| msgid "Comment by"
+msgid "Comment body"
+msgstr "Комментарий"
+
+#: .\templates\comment_form.html:14
+msgid "Add"
+msgstr "Добавить"
 
 #: .\templates\edit_post.html:5
 msgid "Edit Post"
@@ -134,7 +154,7 @@ msgstr "НАЖМИ МЕНЯ"
 msgid "Create"
 msgstr "Создать"
 
-#: .\templates\post.html:17 .\templates\profile.html:25
+#: .\templates\post.html:17 .\templates\profile.html:26
 msgid "Edit"
 msgstr "Изм."
 
@@ -149,6 +169,12 @@ msgstr "тэги"
 #: .\templates\post.html:37
 msgid "Comments"
 msgstr "Комментарии"
+
+#: .\templates\post.html:38
+#, fuzzy
+#| msgid "Comment by"
+msgid "Add comment"
+msgstr "Добавить комментарий"
 
 #: .\templates\posts.html:12
 msgid "Search..."
@@ -169,10 +195,6 @@ msgstr "Фамилия"
 #: .\templates\profile.html:18
 msgid "Register Date"
 msgstr "Дата регистрации"
-
-#: .\templates\profile.html:32
-msgid "Admin"
-msgstr "Админ"
 
 #: .\templates\register.html:5 .\templates\register.html:13
 msgid "Register"

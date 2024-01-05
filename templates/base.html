@@ -10,7 +10,7 @@
 <body class="bg-violet-100">
 <div class="shadow-xl rounded-2xl mt-8 w-4/5 min-h-screen m-auto bg-white">
     <header>
-        <div class="rounded-t-2xl grid grid-cols-2 shadow-lg bg-violet-700 py-8 px-8">
+        <div class="rounded-t-2xl transition grid grid-cols-2 hover:shadow-xl shadow bg-violet-700 py-8 px-8">
             <div class="text-left">
                 <a class="p-2 text-white font-bold text-xl" href="/">Connectopia</a>
                 <a class="p-2 text-white text-lg" href="/posts">{% translate 'Posts' %}</a>
@@ -18,6 +18,9 @@
                 <a class="p-2 text-white text-lg" href="/users">{% translate 'Users' %}</a>
             </div>
             <div class="text-right">
+                {% if request.user.is_superuser %}
+                    <a class="p-2 text-white text-center text-lg" href="/admin">{% translate "Admin" %}</a>
+                {% endif %}
                 <a class="p-2 text-white text-center text-lg" href="/profile">{% translate "Profile" %}</a>
                 <a class="p-2 text-white text-center text-lg" href="/chat">{% translate 'Chat' %}</a>
                 <a class="p-2 text-white text-center text-lg" href="/logout">{% translate 'Logout' %}</a>
