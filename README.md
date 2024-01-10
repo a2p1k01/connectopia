@@ -17,4 +17,3 @@
 - [x] Redesign frontend(maybe, idk yet)
 - [x] Translations
 - [x] Followers
-- [ ] Likes

@@ -20,10 +20,6 @@
             <a href="{{ post.get_absolute_url }}" class="underline text-violet-400 text-3xl p-1">{{ post.title }} {% translate 'by' %} {{ post.author }}</a>
             <h1 class="text-xl p-1">{{ post.created }}</h1>
             <h1 class="text-lg p-1">{{ post.body|truncatechars:100 }}</h1>
-            <form method="post">
-                {% csrf_token %}
-                <button class="border border-rose-700 bg-rose-500 text-white rounded-xl w-10" name="like" value="{{ post.id }}">Like</button>
-            </form>
             {% if post.tags.all|length != 0 %}
                 <p class="text-slate-700">{% translate 'tags' %}:
                 {% for tag in post.tags.all %}

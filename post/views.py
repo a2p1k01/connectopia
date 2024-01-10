@@ -14,8 +14,6 @@ def posts_list(request):
     if 'query' in request.GET:
         query = request.GET.get('query')
     posts = Post.post_manager.filter(Q(slug__contains=query))
-    if request.method == 'POST':
-        print(request.POST.get('like', 1))
     return render(request, 'posts.html', {
         "posts": posts,
     })
